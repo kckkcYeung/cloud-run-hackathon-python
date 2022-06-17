@@ -227,8 +227,11 @@ def move():
          else:
                 attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"])
                 if attacker != "":
-                    attacker_direction = finddatafromurl(attacker)["direction"]
-                    print(attacker_direction)
+                    try :
+                        attacker_direction = finddatafromurl(attacker)["direction"]
+
+                    except:
+                        attacker_direction = N
 
                     if attacker_direction == "N":
                         if me["direction"] == "S":
@@ -253,6 +256,8 @@ def move():
                             response =  RandStringRunes("RL")
                         else :
                             response = T
+
+                            
 
                     
                     
