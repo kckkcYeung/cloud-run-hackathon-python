@@ -158,8 +158,36 @@ def move():
                 return x == 0
             else:
                 return False
-    if me["wasHit"] == "true":
-        response = F
+    if me["wasHit"] ==  True:
+         if isBuilding(me["x"], me["y"], me["direction"] ):
+                print("is builing")
+                response = RandStringRunes("RL")
+                if response == R:
+                    if me["direction"] == N:
+                        predir = E
+                    if me["direction"] == S:
+                        predir = W
+                    if me["direction"] == E:
+                        predir = S
+                    if me["direction"] == W:
+                        predir = N
+                        
+                    if isBuilding(me["x"], me["y"], predir ):
+                        response = L
+
+                if response == L:
+                    if me["direction"] == N:
+                        predir = W
+                    if me["direction"] == S:
+                        predir = E
+                    if me["direction"] == E:
+                        predir = N
+                    if me["direction"] == W:
+                        predir = S
+                    if isBuilding(me["x"], me["y"], predir ):
+                        response = R
+            else:
+                response = F
     
         
     elif checkHasPersonInDirection(me["x"], me["y"], me["direction"]) :
