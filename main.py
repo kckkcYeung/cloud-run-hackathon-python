@@ -491,12 +491,10 @@ def move():
                                 if me["direction"] == W:
                                     response = F
 
-                    
-    print(response)
+            
 
-    if response is None:
-        response = F
-    return response
+
+    return T
 
 
 
