@@ -236,7 +236,7 @@ def move():
                         attacker_direction = finddatafromurl(attacker)["direction"]
 
                     except:
-                        attacker_direction = RandStringRunes("FFRL")
+                        attacker_direction = RandStringRunes("NSEW")
 
                     if attacker_direction == "N":
                         if me["direction"] == "S":
