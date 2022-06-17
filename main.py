@@ -231,7 +231,7 @@ def move():
 
                 except :
                     attacker = j["_links"]["self"]["href"]
-                if attacker != None:
+                if attacker != "":
                     try :
                         attacker_direction = finddatafromurl(attacker)["direction"]
 
@@ -261,7 +261,8 @@ def move():
                             response =  RandStringRunes("RL")
                         else :
                             response = T
-
+                    else:
+                        response = RandStringRunes("FFRL")
                             
 
                     
