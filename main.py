@@ -493,8 +493,9 @@ def move():
 
             
 
+    response = RandStringRunes("FFRL")
 
-    return T
+    return response
 
 
 
