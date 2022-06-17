@@ -146,6 +146,34 @@ def move():
                 return False
             else:
                 return False
+
+    def checkHasPersonInDirection_return_url(x, y, direction) :
+            if direction == N:
+                for i in range(1,4) :
+                    if checkHasPerson(x, y-i) :
+                        print("checkHasPersonInDirection", x, y-i)
+                        return board[y-i][x]
+    
+            elif direction == S:
+                for i in range(1,4) :
+                    if checkHasPerson(x, y+i) :
+                        print("checkHasPersonInDirection", x, y+i)
+                        return board[y+i][x]
+                
+            elif direction == E:
+                for i in range(1,4) :
+                    if checkHasPerson(x+i, y) :
+                        print("checkHasPersonInDirection", x+i, y)
+                        return board[y][x+i]
+                
+            elif direction == W:
+                for i in range(1,4) :
+                    if checkHasPerson(x-i, y) :
+                        print("checkHasPersonInDirection", x-i, y)
+                        return board[y][x-i]
+            else :
+                return ""
+
             
     def isBuilding(x, y, direction ) :
             if direction == N:
@@ -158,6 +186,16 @@ def move():
                 return x == 0
             else:
                 return False
+
+    def finddatafromurl(url):
+        data = j["arena"]["state"][url]
+        return data
+
+    
+
+
+            
+            
     if me["wasHit"] ==  True:
          if isBuilding(me["x"], me["y"], me["direction"] ):
                 print("is builing")
@@ -186,9 +224,11 @@ def move():
                         predir = S
                     if isBuilding(me["x"], me["y"], predir ):
                         response = R
-            else:
-                response = F
-    
+         else:
+                attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"]) 
+                if attacker != "":
+                    attacker_direction = finddatafromurl(attacker)["direction"]
+                    print(attacker_direction)
         
     elif checkHasPersonInDirection(me["x"], me["y"], me["direction"]) :
             print("Has person In Direction")
