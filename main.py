@@ -173,6 +173,8 @@ def move():
                         return board[y][x-i]
 
 
+
+
             
     def isBuilding(x, y, direction ) :
             if direction == N:
@@ -229,7 +231,7 @@ def move():
 
                 except :
                     attacker = j["_links"]["self"]["href"]
-                if attacker != "":
+                if attacker != None:
                     try :
                         attacker_direction = finddatafromurl(attacker)["direction"]
 
@@ -491,8 +493,7 @@ def move():
                                     response = F
 
             
-        return response
-
+    return response
 
 
 
