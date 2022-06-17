@@ -225,7 +225,11 @@ def move():
                     if isBuilding(me["x"], me["y"], predir ):
                         response = R
          else:
-                attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"])
+                try:
+                    attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"])
+
+                except :
+                    attacker = j["_links"]["self"]["href"]
                 if attacker != "":
                     try :
                         attacker_direction = finddatafromurl(attacker)["direction"]
