@@ -225,10 +225,37 @@ def move():
                     if isBuilding(me["x"], me["y"], predir ):
                         response = R
          else:
-                attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"]) 
+                attacker = checkHasPersonInDirection_return_url(me["x"],me["y"],me["direction"])
                 if attacker != "":
                     attacker_direction = finddatafromurl(attacker)["direction"]
                     print(attacker_direction)
+
+                    if attacker_direction == "N":
+                        if me["direction"] == "S":
+                            response =  RandStringRunes("RL")
+                        else :
+                            response = T
+
+                    if attacker_direction == "S":
+                        if me["direction"] == "N":
+                            response =  RandStringRunes("RL")
+                        else :
+                            response = T
+
+                    if attacker_direction == "E":
+                        if me["direction"] == "W":
+                            response =  RandStringRunes("RL")
+                        else :
+                            response = T
+
+                    if attacker_direction == "W":
+                        if me["direction"] == "E":
+                            response =  RandStringRunes("RL")
+                        else :
+                            response = T
+
+                    
+                    
         
     elif checkHasPersonInDirection(me["x"], me["y"], me["direction"]) :
             print("Has person In Direction")
