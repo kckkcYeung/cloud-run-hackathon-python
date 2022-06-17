@@ -492,8 +492,10 @@ def move():
                                     response = F
 
             
-
-    return response
+    try :
+        return response
+    except: 
+        return F
 
 
 
