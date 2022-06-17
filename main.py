@@ -493,8 +493,6 @@ def move():
 
             
 
-    
-
     return response
 
 
