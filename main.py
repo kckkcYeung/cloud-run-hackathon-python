@@ -158,9 +158,11 @@ def move():
                 return x == 0
             else:
                 return False
-
+    if me["wasHit"] == "true":
+        response = F
+    
         
-    if checkHasPersonInDirection(me["x"], me["y"], me["direction"]) :
+    elif checkHasPersonInDirection(me["x"], me["y"], me["direction"]) :
             print("Has person In Direction")
             response = T
     elif checkHasPersonInRight(me["x"], me["y"], me["direction"]):
