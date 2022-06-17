@@ -490,7 +490,8 @@ def move():
                     
     print(response)
 
-
+    if response is None:
+        response = F
     return response
 
 
