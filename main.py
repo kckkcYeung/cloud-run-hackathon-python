@@ -13,7 +13,7 @@ N = "N"
 S = "S"
 E = "E"
 W = "W"
-
+response = F
 
 NPosition = [W, E, S]
 SPosition = [E, W, W]
