@@ -171,8 +171,7 @@ def move():
                     if checkHasPerson(x-i, y) :
                         print("checkHasPersonInDirection", x-i, y)
                         return board[y][x-i]
-            else :
-                return ""
+
 
             
     def isBuilding(x, y, direction ) :
